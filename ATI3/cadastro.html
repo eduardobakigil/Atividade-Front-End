@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <img src="ASSETS/logo.png" alt="Logo coração +">
+        <h1> Seja um doador de sangue </h1>    
+        <nav>
+            <ul>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+             <form>
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" required>
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" maxlength="2" placeholder="UF" required>
+
+                    <button type="submit">Enviar Cadastro</button>
+                </fieldset>
+            </form>
+    </div>
+
+</body>
+</html>
