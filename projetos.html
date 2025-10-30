@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
 
     <header>
@@ -17,6 +18,7 @@
                 <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle">🌙 Modo escuro</button>
     </header>
 
     <div class="caixabranca">
@@ -31,5 +33,25 @@
     <img src="ASSETS/Projeto universitário.jpeg" alt="Projeto universitário “Salve Vidas”">
     </div>
 
+    <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Carrega preferência salva
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️ Modo claro';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const darkMode = body.classList.contains('dark');
+    toggleBtn.textContent = darkMode ? '☀️ Modo claro' : '🌙 Modo escuro';
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  });
+</script>
+
+
+    
 </body>
 </html>

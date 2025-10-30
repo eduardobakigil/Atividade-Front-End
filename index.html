@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -22,6 +23,7 @@
         </ul>
       </nav>
     </div>
+    <button id="theme-toggle">🌙 Modo escuro</button>
   </header>
 
   <main>
@@ -81,6 +83,24 @@ Inclusão: Toda pessoa pode ser parte da mudança, independentemente de sua orig
       <p><a href="mailto:contato@vidamais.org">contato@vidamais.org</a></p>
     </div>
   </footer>
+
+  <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Carrega preferência salva
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️ Modo claro';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const darkMode = body.classList.contains('dark');
+    toggleBtn.textContent = darkMode ? '☀️ Modo claro' : '🌙 Modo escuro';
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  });
+</script>
 
 </body>
 </html>

@@ -18,6 +18,7 @@
                 <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle">🌙 Modo escuro</button>
     </header>
 
     <div>
@@ -56,6 +57,24 @@
                 </fieldset>
             </form>
     </div>
+
+      <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Carrega preferência salva
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️ Modo claro';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const darkMode = body.classList.contains('dark');
+    toggleBtn.textContent = darkMode ? '☀️ Modo claro' : '🌙 Modo escuro';
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  });
+</script>
 
 </body>
 </html>
